@@ -1,0 +1,308 @@
+#######################################################################
+##	File: ram_wb.ITC
+##    
+##	Copyright (C) 2014-2019  Alireza Monemi
+##    
+##	This file is part of ProNoC 1.9.1 
+##
+## 	WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT 
+##	MAY CAUSE UNEXPECTED BEHAIVOR.
+################################################################################
+
+$HashRef = bless( {
+                    'category' => 'RAM',
+                    'name' => 'ram_wb',
+                    'gui_status' => {
+                                      'status' => 'ideal',
+                                      'timeout' => 0
+                                    },
+                    'ports' => {
+                                 'sb_cti_i' => {
+                                                 'connect_type' => 'output',
+                                                 'default_out' => 'Active low',
+                                                 'type' => 'input',
+                                                 'connect_range' => 'CTIw-1:0',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_name' => 'sb_cti_i',
+                                                 'name' => 'sb_cti_i',
+                                                 'range' => 'CTIw-1:0'
+                                               },
+                                 'sa_dat_i' => {
+                                                 'connect_range' => 'Dw-1:0',
+                                                 'outport_type' => 'concatenate',
+                                                 'type' => 'input',
+                                                 'name' => 'sa_dat_i',
+                                                 'range' => 'Dw-1:0',
+                                                 'connect_name' => 'sa_dat_i',
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'output'
+                                               },
+                                 'sb_ack_o' => {
+                                                 'range' => '',
+                                                 'name' => 'sb_ack_o',
+                                                 'connect_name' => 'sb_ack_o',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => '',
+                                                 'type' => 'output',
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'input'
+                                               },
+                                 'sb_rty_o' => {
+                                                 'connect_type' => 'input',
+                                                 'default_out' => 'Active low',
+                                                 'connect_name' => 'sb_rty_o',
+                                                 'name' => 'sb_rty_o',
+                                                 'range' => '',
+                                                 'type' => 'output',
+                                                 'connect_range' => '',
+                                                 'outport_type' => 'concatenate'
+                                               },
+                                 'sb_sel_i' => {
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'output',
+                                                 'name' => 'sb_sel_i',
+                                                 'range' => 'SELw-1:0',
+                                                 'connect_name' => 'sb_sel_i',
+                                                 'connect_range' => 'SELw-1:0',
+                                                 'outport_type' => 'concatenate',
+                                                 'type' => 'input'
+                                               },
+                                 'sa_err_o' => {
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'input',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => '',
+                                                 'type' => 'output',
+                                                 'range' => '',
+                                                 'name' => 'sa_err_o',
+                                                 'connect_name' => 'sa_err_o'
+                                               },
+                                 'sb_err_o' => {
+                                                 'type' => 'output',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => '',
+                                                 'connect_name' => 'sb_err_o',
+                                                 'range' => '',
+                                                 'name' => 'sb_err_o',
+                                                 'connect_type' => 'input',
+                                                 'default_out' => 'Active low'
+                                               },
+                                 'sa_sel_i' => {
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'output',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => 'SELw-1:0',
+                                                 'type' => 'input',
+                                                 'range' => 'SELw-1:0',
+                                                 'name' => 'sa_sel_i',
+                                                 'connect_name' => 'sa_sel_i'
+                                               },
+                                 'sb_dat_i' => {
+                                                 'connect_type' => 'output',
+                                                 'default_out' => 'Active low',
+                                                 'type' => 'input',
+                                                 'connect_range' => 'Dw-1:0',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_name' => 'sb_dat_i',
+                                                 'name' => 'sb_dat_i',
+                                                 'range' => 'Dw-1:0'
+                                               },
+                                 'sa_cti_i' => {
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'output',
+                                                 'name' => 'sa_cti_i',
+                                                 'range' => 'CTIw-1:0',
+                                                 'connect_name' => 'sa_cti_i',
+                                                 'connect_range' => 'CTIw-1:0',
+                                                 'outport_type' => 'concatenate',
+                                                 'type' => 'input'
+                                               },
+                                 'sa_cyc_i' => {
+                                                 'type' => 'input',
+                                                 'connect_range' => '',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_name' => 'sa_cyc_i',
+                                                 'name' => 'sa_cyc_i',
+                                                 'range' => '',
+                                                 'connect_type' => 'output',
+                                                 'default_out' => 'Active low'
+                                               },
+                                 'sa_we_i' => {
+                                                'outport_type' => 'concatenate',
+                                                'connect_range' => '',
+                                                'type' => 'input',
+                                                'range' => '',
+                                                'name' => 'sa_we_i',
+                                                'connect_name' => 'sa_we_i',
+                                                'default_out' => 'Active low',
+                                                'connect_type' => 'output'
+                                              },
+                                 'sb_cyc_i' => {
+                                                 'connect_name' => 'sb_cyc_i',
+                                                 'range' => '',
+                                                 'name' => 'sb_cyc_i',
+                                                 'type' => 'input',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => '',
+                                                 'connect_type' => 'output',
+                                                 'default_out' => 'Active low'
+                                               },
+                                 'sb_bte_i' => {
+                                                 'range' => 'BTEw-1:0',
+                                                 'name' => 'sb_bte_i',
+                                                 'connect_name' => 'sb_bte_i',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => 'BTEw-1:0',
+                                                 'type' => 'input',
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'output'
+                                               },
+                                 'sb_stb_i' => {
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => '',
+                                                 'type' => 'input',
+                                                 'range' => '',
+                                                 'name' => 'sb_stb_i',
+                                                 'connect_name' => 'sb_stb_i',
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'output'
+                                               },
+                                 'clk' => {
+                                            'connect_type' => 'output',
+                                            'default_out' => 'Active low',
+                                            'connect_name' => 'clk',
+                                            'range' => '',
+                                            'name' => 'clk',
+                                            'type' => 'input',
+                                            'outport_type' => 'concatenate',
+                                            'connect_range' => ''
+                                          },
+                                 'sa_dat_o' => {
+                                                 'connect_type' => 'input',
+                                                 'default_out' => 'Active low',
+                                                 'type' => 'output',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => 'Dw-1:0',
+                                                 'connect_name' => 'sa_dat_o',
+                                                 'range' => 'Dw-1:0',
+                                                 'name' => 'sa_dat_o'
+                                               },
+                                 'sa_addr_i' => {
+                                                  'connect_name' => 'sa_addr_i',
+                                                  'range' => 'Aw-1:0',
+                                                  'name' => 'sa_addr_i',
+                                                  'type' => 'input',
+                                                  'outport_type' => 'concatenate',
+                                                  'connect_range' => 'Aw-1:0',
+                                                  'connect_type' => 'output',
+                                                  'default_out' => 'Active low'
+                                                },
+                                 'sb_tag_i' => {
+                                                 'connect_name' => 'sb_tag_i',
+                                                 'range' => 'TAGw-1:0',
+                                                 'name' => 'sb_tag_i',
+                                                 'type' => 'input',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => 'TAGw-1:0',
+                                                 'connect_type' => 'output',
+                                                 'default_out' => 'Active low'
+                                               },
+                                 'sa_bte_i' => {
+                                                 'name' => 'sa_bte_i',
+                                                 'range' => 'BTEw-1:0',
+                                                 'connect_name' => 'sa_bte_i',
+                                                 'connect_range' => 'BTEw-1:0',
+                                                 'outport_type' => 'concatenate',
+                                                 'type' => 'input',
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'output'
+                                               },
+                                 'sa_stb_i' => {
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'output',
+                                                 'range' => '',
+                                                 'name' => 'sa_stb_i',
+                                                 'connect_name' => 'sa_stb_i',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => '',
+                                                 'type' => 'input'
+                                               },
+                                 'sa_ack_o' => {
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => '',
+                                                 'type' => 'output',
+                                                 'range' => '',
+                                                 'name' => 'sa_ack_o',
+                                                 'connect_name' => 'sa_ack_o',
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'input'
+                                               },
+                                 'sa_rty_o' => {
+                                                 'range' => '',
+                                                 'name' => 'sa_rty_o',
+                                                 'connect_name' => 'sa_rty_o',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => '',
+                                                 'type' => 'output',
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'input'
+                                               },
+                                 'sb_dat_o' => {
+                                                 'connect_name' => 'sb_dat_o',
+                                                 'name' => 'sb_dat_o',
+                                                 'range' => 'Dw-1:0',
+                                                 'type' => 'output',
+                                                 'connect_range' => 'Dw-1:0',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_type' => 'input',
+                                                 'default_out' => 'Active low'
+                                               },
+                                 'sb_addr_i' => {
+                                                  'default_out' => 'Active low',
+                                                  'connect_type' => 'output',
+                                                  'outport_type' => 'concatenate',
+                                                  'connect_range' => 'Aw-1:0',
+                                                  'type' => 'input',
+                                                  'range' => 'Aw-1:0',
+                                                  'name' => 'sb_addr_i',
+                                                  'connect_name' => 'sb_addr_i'
+                                                },
+                                 'reset' => {
+                                              'type' => 'input',
+                                              'connect_range' => '',
+                                              'outport_type' => 'concatenate',
+                                              'connect_name' => 'reset',
+                                              'name' => 'reset',
+                                              'range' => '',
+                                              'connect_type' => 'output',
+                                              'default_out' => 'Active low'
+                                            },
+                                 'sa_tag_i' => {
+                                                 'default_out' => 'Active low',
+                                                 'connect_type' => 'output',
+                                                 'outport_type' => 'concatenate',
+                                                 'connect_range' => 'TAGw-1:0',
+                                                 'type' => 'input',
+                                                 'range' => 'TAGw-1:0',
+                                                 'name' => 'sa_tag_i',
+                                                 'connect_name' => 'sa_tag_i'
+                                               },
+                                 'sb_we_i' => {
+                                                'default_out' => 'Active low',
+                                                'connect_type' => 'output',
+                                                'connect_range' => '',
+                                                'outport_type' => 'concatenate',
+                                                'type' => 'input',
+                                                'name' => 'sb_we_i',
+                                                'range' => '',
+                                                'connect_name' => 'sb_we_i'
+                                              }
+                               },
+                    'connection_num' => 'multi connection',
+                    'modules' => {
+                                   'wb_dual_port_ram' => {}
+                                 },
+                    'type' => 'plug',
+                    'file_name' => '/home/natan/Documents/Brickabode/FpgaResearch/noc-mpsoc-opencores/trunk/mpsoc/src_peripheral/ram/wb_dual_port_ram.v',
+                    'module_name' => 'wb_dual_port_ram'
+                  }, 'intfc_gen' );

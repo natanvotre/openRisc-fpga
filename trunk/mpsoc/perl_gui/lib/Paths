@@ -1,0 +1,29 @@
+#######################################################################
+##	File: Paths
+##    
+##	Copyright (C) 2014-2019  Alireza Monemi
+##    
+##	This file is part of ProNoC 1.9.1 
+##
+## 	WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT 
+##	MAY CAUSE UNEXPECTED BEHAIVOR.
+################################################################################
+
+$setting = bless( {
+                    'parameters_order' => {
+                                            'PATH' => [
+                                                        'PRONOC_WORK',
+                                                        'QUARTUS_BIN',
+                                                        'MODELSIM_BIN'
+                                                      ]
+                                          },
+                    'gui_status' => {
+                                      'status' => 'ref',
+                                      'timeout' => 10
+                                    },
+                    'PATH' => {
+                                'QUARTUS_BIN' => '/home/natan/intelFPGA_lite/19.1/quartus/linux64',
+                                'PRONOC_WORK' => '/home/natan/Documents/Brickabode/FpgaResearch/noc-mpsoc-opencores/trunk/mpsoc_work',
+                                'MODELSIM_BIN' => '/home/natan/intelFPGA_lite/19.1/modelsim_ase/bin'
+                              }
+                  }, 'ProNOC' );

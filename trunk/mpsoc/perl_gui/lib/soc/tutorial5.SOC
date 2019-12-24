@@ -1,0 +1,1303 @@
+#######################################################################
+##	File: tutorial5.SOC
+##    
+##	Copyright (C) 2014-2019  Alireza Monemi
+##    
+##	This file is part of ProNoC 1.9.1 
+##
+## 	WARNING: THIS IS AN AUTO-GENERATED FILE. CHANGES TO IT 
+##	MAY CAUSE UNEXPECTED BEHAIVOR.
+################################################################################
+
+$soc = bless( {
+                'hdl_files' => undef,
+                'Unset-intfc' => {
+                                   'uart-RxD_wr_sim' => 'IO',
+                                   'uart-RxD_ready_sim' => 'IO',
+                                   'bus-snoop_en_o' => 'IO',
+                                   'bus-snoop_adr_o' => 'IO',
+                                   'uart-RxD_din_sim' => 'IO'
+                                 },
+                'compile_pin_range_lsb' => {
+                                             'led_port_o' => 0,
+                                             'bus_snoop_adr_o' => 0,
+                                             'source_reset_in' => 0
+                                           },
+                'aeMB0' => {
+                             'version' => 2
+                           },
+                'single_port_ram0' => {
+                                        'version' => 22
+                                      },
+                'parameters_order' => {
+                                        'Unset-intfc' => [
+                                                           'uart-RxD_din_sim',
+                                                           'uart-RxD_ready_sim',
+                                                           'uart-RxD_wr_sim',
+                                                           'bus-snoop_adr_o',
+                                                           'bus-snoop_en_o'
+                                                         ]
+                                      },
+                'instances' => {
+                                 'gpo0' => {
+                                             'module_name' => 'gpo',
+                                             'sockets' => {},
+                                             'parameters_order' => [
+                                                                     'PORT_WIDTH',
+                                                                     'Aw',
+                                                                     'TAGw',
+                                                                     'SELw',
+                                                                     'Dw'
+                                                                   ],
+                                             'module' => 'gpo',
+                                             'description_pdf' => undef,
+                                             'plugs' => {
+                                                          'wb_slave' => {
+                                                                          'nums' => {
+                                                                                      '0' => {
+                                                                                               'name' => 'wb',
+                                                                                               'end' => 2432696351,
+                                                                                               'width' => 5,
+                                                                                               'base' => 2432696320,
+                                                                                               'addr' => '0x9100_0000	0x91ff_ffff		General-Purpose I/O',
+                                                                                               'connect_socket_num' => '0',
+                                                                                               'connect_id' => 'wishbone_bus0',
+                                                                                               'connect_socket' => 'wb_slave'
+                                                                                             }
+                                                                                    },
+                                                                          'type' => 'num',
+                                                                          'connection_num' => undef,
+                                                                          'value' => 1
+                                                                        },
+                                                          'reset' => {
+                                                                       'type' => 'num',
+                                                                       'nums' => {
+                                                                                   '0' => {
+                                                                                            'connect_id' => 'clk_source0',
+                                                                                            'connect_socket_num' => '0',
+                                                                                            'name' => 'reset',
+                                                                                            'connect_socket' => 'reset'
+                                                                                          }
+                                                                                 },
+                                                                       'value' => 1,
+                                                                       'connection_num' => undef
+                                                                     },
+                                                          'clk' => {
+                                                                     'connection_num' => undef,
+                                                                     'value' => 1,
+                                                                     'nums' => {
+                                                                                 '0' => {
+                                                                                          'connect_socket' => 'clk',
+                                                                                          'name' => 'clk',
+                                                                                          'connect_socket_num' => '0',
+                                                                                          'connect_id' => 'clk_source0'
+                                                                                        }
+                                                                               },
+                                                                     'type' => 'num'
+                                                                   }
+                                                        },
+                                             'parameters' => {
+                                                               'TAGw' => {
+                                                                           'value' => '    3'
+                                                                         },
+                                                               'PORT_WIDTH' => {
+                                                                                 'value' => 4
+                                                                               },
+                                                               'Dw' => {
+                                                                         'value' => 'PORT_WIDTH'
+                                                                       },
+                                                               'Aw' => {
+                                                                         'value' => '    2'
+                                                                       },
+                                                               'SELw' => {
+                                                                           'value' => '    4'
+                                                                         }
+                                                             },
+                                             'category' => 'GPIO',
+                                             'instance_name' => 'led'
+                                           },
+                                 'mor1kx0' => {
+                                                'parameters_order' => [
+                                                                        'OPTION_OPERAND_WIDTH',
+                                                                        'IRQ_NUM',
+                                                                        'OPTION_DCACHE_SNOOP',
+                                                                        'FEATURE_INSTRUCTIONCACHE',
+                                                                        'FEATURE_DATACACHE',
+                                                                        'FEATURE_IMMU',
+                                                                        'FEATURE_DMMU'
+                                                                      ],
+                                                'module_name' => 'mor1k',
+                                                'sockets' => {
+                                                               'interrupt_peripheral' => {
+                                                                                           'value' => 'IRQ_NUM',
+                                                                                           'connection_num' => 'single connection',
+                                                                                           'nums' => {
+                                                                                                       '0' => {
+                                                                                                                'name' => 'interrupt_peripheral'
+                                                                                                              }
+                                                                                                     },
+                                                                                           'type' => 'param'
+                                                                                         }
+                                                             },
+                                                'plugs' => {
+                                                             'clk' => {
+                                                                        'type' => 'num',
+                                                                        'nums' => {
+                                                                                    '0' => {
+                                                                                             'name' => 'clk',
+                                                                                             'connect_id' => 'clk_source0',
+                                                                                             'connect_socket_num' => '0',
+                                                                                             'connect_socket' => 'clk'
+                                                                                           }
+                                                                                  },
+                                                                        'connection_num' => undef,
+                                                                        'value' => 1
+                                                                      },
+                                                             'reset' => {
+                                                                          'nums' => {
+                                                                                      '0' => {
+                                                                                               'connect_id' => 'clk_source0',
+                                                                                               'connect_socket_num' => '0',
+                                                                                               'name' => 'reset',
+                                                                                               'connect_socket' => 'reset'
+                                                                                             }
+                                                                                    },
+                                                                          'type' => 'num',
+                                                                          'connection_num' => undef,
+                                                                          'value' => 1
+                                                                        },
+                                                             'wb_master' => {
+                                                                              'nums' => {
+                                                                                          '1' => {
+                                                                                                   'connect_socket' => 'wb_master',
+                                                                                                   'name' => 'dwb',
+                                                                                                   'connect_id' => 'wishbone_bus0',
+                                                                                                   'connect_socket_num' => '0'
+                                                                                                 },
+                                                                                          '0' => {
+                                                                                                   'connect_socket_num' => '1',
+                                                                                                   'connect_id' => 'wishbone_bus0',
+                                                                                                   'name' => 'iwb',
+                                                                                                   'connect_socket' => 'wb_master'
+                                                                                                 }
+                                                                                        },
+                                                                              'type' => 'num',
+                                                                              'value' => 2,
+                                                                              'connection_num' => undef
+                                                                            },
+                                                             'enable' => {
+                                                                           'value' => 1,
+                                                                           'connection_num' => undef,
+                                                                           'nums' => {
+                                                                                       '0' => {
+                                                                                                'name' => 'enable',
+                                                                                                'connect_id' => 'IO',
+                                                                                                'connect_socket_num' => undef,
+                                                                                                'connect_socket' => undef
+                                                                                              }
+                                                                                     },
+                                                                           'type' => 'num'
+                                                                         },
+                                                             'snoop' => {
+                                                                          'type' => 'num',
+                                                                          'nums' => {
+                                                                                      '0' => {
+                                                                                               'connect_socket' => undef,
+                                                                                               'name' => 'snoop',
+                                                                                               'connect_socket_num' => undef,
+                                                                                               'connect_id' => 'IO'
+                                                                                             }
+                                                                                    },
+                                                                          'connection_num' => undef,
+                                                                          'value' => 1
+                                                                        }
+                                                           },
+                                                'instance_name' => 'mor1kx0',
+                                                'category' => 'Processor',
+                                                'parameters' => {
+                                                                  'FEATURE_INSTRUCTIONCACHE' => {
+                                                                                                  'value' => '"ENABLED"'
+                                                                                                },
+                                                                  'FEATURE_DMMU' => {
+                                                                                      'value' => '"ENABLED"'
+                                                                                    },
+                                                                  'FEATURE_IMMU' => {
+                                                                                      'value' => '"ENABLED"'
+                                                                                    },
+                                                                  'OPTION_OPERAND_WIDTH' => {
+                                                                                              'value' => '32'
+                                                                                            },
+                                                                  'OPTION_DCACHE_SNOOP' => {
+                                                                                             'value' => '"NONE"'
+                                                                                           },
+                                                                  'FEATURE_DATACACHE' => {
+                                                                                           'value' => '"ENABLED"'
+                                                                                         },
+                                                                  'IRQ_NUM' => {
+                                                                                 'value' => '32'
+                                                                               }
+                                                                },
+                                                'description_pdf' => undef,
+                                                'module' => 'mor1kx'
+                                              },
+                                 'wishbone_bus0' => {
+                                                      'parameters_order' => [
+                                                                              'M',
+                                                                              'S',
+                                                                              'Dw',
+                                                                              'Aw',
+                                                                              'SELw',
+                                                                              'TAGw',
+                                                                              'CTIw',
+                                                                              'BTEw'
+                                                                            ],
+                                                      'module_name' => 'wishbone_bus',
+                                                      'sockets' => {
+                                                                     'wb_addr_map' => {
+                                                                                        'value' => 1,
+                                                                                        'connection_num' => 'single connection',
+                                                                                        'type' => 'num',
+                                                                                        'nums' => {
+                                                                                                    '0' => {
+                                                                                                             'name' => 'wb_addr_map'
+                                                                                                           }
+                                                                                                  }
+                                                                                      },
+                                                                     'wb_slave' => {
+                                                                                     'connection_num' => 'single connection',
+                                                                                     'value' => 'S',
+                                                                                     'type' => 'param',
+                                                                                     'nums' => {
+                                                                                                 '0' => {
+                                                                                                          'name' => 'wb_slave'
+                                                                                                        }
+                                                                                               }
+                                                                                   },
+                                                                     'wb_master' => {
+                                                                                      'value' => 'M',
+                                                                                      'connection_num' => 'single connection',
+                                                                                      'type' => 'param',
+                                                                                      'nums' => {
+                                                                                                  '0' => {
+                                                                                                           'name' => 'wb_master'
+                                                                                                         }
+                                                                                                }
+                                                                                    },
+                                                                     'snoop' => {
+                                                                                  'connection_num' => 'single connection',
+                                                                                  'value' => 1,
+                                                                                  'type' => 'num',
+                                                                                  'nums' => {
+                                                                                              '0' => {
+                                                                                                       'name' => 'snoop'
+                                                                                                     }
+                                                                                            }
+                                                                                }
+                                                                   },
+                                                      'plugs' => {
+                                                                   'reset' => {
+                                                                                'connection_num' => undef,
+                                                                                'value' => 1,
+                                                                                'type' => 'num',
+                                                                                'nums' => {
+                                                                                            '0' => {
+                                                                                                     'connect_socket' => 'reset',
+                                                                                                     'name' => 'reset',
+                                                                                                     'connect_socket_num' => '0',
+                                                                                                     'connect_id' => 'clk_source0'
+                                                                                                   }
+                                                                                          }
+                                                                              },
+                                                                   'clk' => {
+                                                                              'nums' => {
+                                                                                          '0' => {
+                                                                                                   'connect_socket' => 'clk',
+                                                                                                   'name' => 'clk',
+                                                                                                   'connect_socket_num' => '0',
+                                                                                                   'connect_id' => 'clk_source0'
+                                                                                                 }
+                                                                                        },
+                                                                              'type' => 'num',
+                                                                              'connection_num' => undef,
+                                                                              'value' => 1
+                                                                            }
+                                                                 },
+                                                      'parameters' => {
+                                                                        'SELw' => {
+                                                                                    'value' => 'Dw/8'
+                                                                                  },
+                                                                        'S' => {
+                                                                                 'value' => '4'
+                                                                               },
+                                                                        'Aw' => {
+                                                                                  'value' => '32'
+                                                                                },
+                                                                        'Dw' => {
+                                                                                  'value' => '32'
+                                                                                },
+                                                                        'BTEw' => {
+                                                                                    'value' => '2 '
+                                                                                  },
+                                                                        'TAGw' => {
+                                                                                    'value' => '3'
+                                                                                  },
+                                                                        'M' => {
+                                                                                 'value' => 2
+                                                                               },
+                                                                        'CTIw' => {
+                                                                                    'value' => '3'
+                                                                                  }
+                                                                      },
+                                                      'category' => 'Bus',
+                                                      'instance_name' => 'bus',
+                                                      'description_pdf' => undef,
+                                                      'module' => 'wishbone_bus'
+                                                    },
+                                 'timer0' => {
+                                               'module' => 'timer',
+                                               'description_pdf' => '/mpsoc/src_peripheral/timer/timer.pdf',
+                                               'parameters' => {
+                                                                 'Aw' => {
+                                                                           'value' => '3'
+                                                                         },
+                                                                 'Dw' => {
+                                                                           'value' => '32'
+                                                                         },
+                                                                 'TAGw' => {
+                                                                             'value' => '3'
+                                                                           },
+                                                                 'PRESCALER_WIDTH' => {
+                                                                                        'value' => '8'
+                                                                                      },
+                                                                 'CNTw' => {
+                                                                             'value' => '32     '
+                                                                           },
+                                                                 'SELw' => {
+                                                                             'value' => '4'
+                                                                           }
+                                                               },
+                                               'category' => 'Timer',
+                                               'instance_name' => 'timer',
+                                               'plugs' => {
+                                                            'clk' => {
+                                                                       'connection_num' => undef,
+                                                                       'value' => 1,
+                                                                       'nums' => {
+                                                                                   '0' => {
+                                                                                            'name' => 'clk',
+                                                                                            'connect_id' => 'clk_source0',
+                                                                                            'connect_socket_num' => '0',
+                                                                                            'connect_socket' => 'clk'
+                                                                                          }
+                                                                                 },
+                                                                       'type' => 'num'
+                                                                     },
+                                                            'interrupt_peripheral' => {
+                                                                                        'nums' => {
+                                                                                                    '0' => {
+                                                                                                             'connect_socket' => 'interrupt_peripheral',
+                                                                                                             'name' => 'intrp',
+                                                                                                             'connect_socket_num' => '0',
+                                                                                                             'connect_id' => 'mor1kx0'
+                                                                                                           }
+                                                                                                  },
+                                                                                        'type' => 'num',
+                                                                                        'connection_num' => undef,
+                                                                                        'value' => 1
+                                                                                      },
+                                                            'reset' => {
+                                                                         'value' => 1,
+                                                                         'connection_num' => undef,
+                                                                         'type' => 'num',
+                                                                         'nums' => {
+                                                                                     '0' => {
+                                                                                              'connect_socket' => 'reset',
+                                                                                              'connect_id' => 'clk_source0',
+                                                                                              'connect_socket_num' => '0',
+                                                                                              'name' => 'reset'
+                                                                                            }
+                                                                                   }
+                                                                       },
+                                                            'wb_slave' => {
+                                                                            'type' => 'num',
+                                                                            'nums' => {
+                                                                                        '0' => {
+                                                                                                 'end' => 2516582431,
+                                                                                                 'width' => 5,
+                                                                                                 'base' => 2516582400,
+                                                                                                 'addr' => '0x9600_0000	0x96ff_ffff		PWM/Timer/Counter Ctrl',
+                                                                                                 'name' => 'wb',
+                                                                                                 'connect_socket' => 'wb_slave',
+                                                                                                 'connect_id' => 'wishbone_bus0',
+                                                                                                 'connect_socket_num' => '1'
+                                                                                               }
+                                                                                      },
+                                                                            'value' => 1,
+                                                                            'connection_num' => undef
+                                                                          }
+                                                          },
+                                               'module_name' => 'timer',
+                                               'sockets' => {},
+                                               'parameters_order' => [
+                                                                       'CNTw',
+                                                                       'Dw',
+                                                                       'Aw',
+                                                                       'TAGw',
+                                                                       'SELw',
+                                                                       'PRESCALER_WIDTH'
+                                                                     ]
+                                             },
+                                 'single_port_ram0' => {
+                                                         'module' => 'single_port_ram',
+                                                         'description_pdf' => '/mpsoc/src_peripheral/ram/RAM.pdf',
+                                                         'plugs' => {
+                                                                      'clk' => {
+                                                                                 'connection_num' => undef,
+                                                                                 'value' => 1,
+                                                                                 'nums' => {
+                                                                                             '0' => {
+                                                                                                      'connect_id' => 'clk_source0',
+                                                                                                      'connect_socket_num' => '0',
+                                                                                                      'name' => 'clk',
+                                                                                                      'connect_socket' => 'clk'
+                                                                                                    }
+                                                                                           },
+                                                                                 'type' => 'num'
+                                                                               },
+                                                                      'wb_slave' => {
+                                                                                      'connection_num' => undef,
+                                                                                      'value' => 1,
+                                                                                      'nums' => {
+                                                                                                  '0' => {
+                                                                                                           'connect_socket' => 'wb_slave',
+                                                                                                           'connect_id' => 'wishbone_bus0',
+                                                                                                           'connect_socket_num' => '3',
+                                                                                                           'end' => 65535,
+                                                                                                           'base' => 0,
+                                                                                                           'width' => 'WB_Aw',
+                                                                                                           'addr' => '0x0000_0000	0x3fff_ffff		RAM',
+                                                                                                           'name' => 'wb'
+                                                                                                         }
+                                                                                                },
+                                                                                      'type' => 'num'
+                                                                                    },
+                                                                      'reset' => {
+                                                                                   'nums' => {
+                                                                                               '0' => {
+                                                                                                        'connect_id' => 'clk_source0',
+                                                                                                        'connect_socket_num' => '0',
+                                                                                                        'name' => 'reset',
+                                                                                                        'connect_socket' => 'reset'
+                                                                                                      }
+                                                                                             },
+                                                                                   'type' => 'num',
+                                                                                   'connection_num' => undef,
+                                                                                   'value' => 1
+                                                                                 }
+                                                                    },
+                                                         'parameters' => {
+                                                                           'Aw' => {
+                                                                                     'value' => 14
+                                                                                   },
+                                                                           'Dw' => {
+                                                                                     'value' => '32'
+                                                                                   },
+                                                                           'BTEw' => {
+                                                                                       'value' => '2'
+                                                                                     },
+                                                                           'WB_Aw' => {
+                                                                                        'value' => 'Aw+2'
+                                                                                      },
+                                                                           'SELw' => {
+                                                                                       'value' => 'Dw/8'
+                                                                                     },
+                                                                           'BURST_MODE' => {
+                                                                                             'value' => '"ENABLED"'
+                                                                                           },
+                                                                           'MEM_CONTENT_FILE_NAME' => {
+                                                                                                        'value' => '"ram0"'
+                                                                                                      },
+                                                                           'TAGw' => {
+                                                                                       'value' => '3'
+                                                                                     },
+                                                                           'JTAG_CONNECT' => {
+                                                                                               'value' => ' "JTAG_WB" '
+                                                                                             },
+                                                                           'INIT_FILE_PATH' => {
+                                                                                                 'value' => 'SW_LOC'
+                                                                                               },
+                                                                           'JTAG_INDEX' => {
+                                                                                             'value' => 'CORE_ID'
+                                                                                           },
+                                                                           'CTIw' => {
+                                                                                       'value' => '3'
+                                                                                     },
+                                                                           'FPGA_VENDOR' => {
+                                                                                              'value' => '"ALTERA"'
+                                                                                            },
+                                                                           'INITIAL_EN' => {
+                                                                                             'value' => '"YES"'
+                                                                                           },
+                                                                           'BYTE_WR_EN' => {
+                                                                                             'value' => '"YES"'
+                                                                                           }
+                                                                         },
+                                                         'category' => 'RAM',
+                                                         'instance_name' => 'ram',
+                                                         'module_name' => 'wb_single_port_ram',
+                                                         'sockets' => {},
+                                                         'parameters_order' => [
+                                                                                 'Dw',
+                                                                                 'Aw',
+                                                                                 'BYTE_WR_EN',
+                                                                                 'FPGA_VENDOR',
+                                                                                 'JTAG_CONNECT',
+                                                                                 'JTAG_INDEX',
+                                                                                 'TAGw',
+                                                                                 'SELw',
+                                                                                 'CTIw',
+                                                                                 'BTEw',
+                                                                                 'WB_Aw',
+                                                                                 'BURST_MODE',
+                                                                                 'MEM_CONTENT_FILE_NAME',
+                                                                                 'INITIAL_EN',
+                                                                                 'INIT_FILE_PATH'
+                                                                               ]
+                                                       },
+                                 'clk_source0' => {
+                                                    'parameters_order' => [],
+                                                    'sockets' => {
+                                                                   'clk' => {
+                                                                              'type' => 'num',
+                                                                              'nums' => {
+                                                                                          '0' => {
+                                                                                                   'name' => 'clk'
+                                                                                                 }
+                                                                                        },
+                                                                              'value' => 1,
+                                                                              'connection_num' => 'multi connection'
+                                                                            },
+                                                                   'reset' => {
+                                                                                'value' => 1,
+                                                                                'connection_num' => 'multi connection',
+                                                                                'nums' => {
+                                                                                            '0' => {
+                                                                                                     'name' => 'reset'
+                                                                                                   }
+                                                                                          },
+                                                                                'type' => 'num'
+                                                                              }
+                                                                 },
+                                                    'module_name' => 'clk_source',
+                                                    'parameters' => {},
+                                                    'category' => 'Source',
+                                                    'instance_name' => 'source',
+                                                    'plugs' => {
+                                                                 'reset' => {
+                                                                              'connection_num' => undef,
+                                                                              'value' => 1,
+                                                                              'nums' => {
+                                                                                          '0' => {
+                                                                                                   'connect_socket' => undef,
+                                                                                                   'name' => 'reset',
+                                                                                                   'connect_socket_num' => undef,
+                                                                                                   'connect_id' => 'IO'
+                                                                                                 }
+                                                                                        },
+                                                                              'type' => 'num'
+                                                                            },
+                                                                 'clk' => {
+                                                                            'value' => 1,
+                                                                            'connection_num' => undef,
+                                                                            'type' => 'num',
+                                                                            'nums' => {
+                                                                                        '0' => {
+                                                                                                 'connect_socket' => undef,
+                                                                                                 'connect_socket_num' => undef,
+                                                                                                 'connect_id' => 'IO',
+                                                                                                 'name' => 'clk'
+                                                                                               }
+                                                                                      }
+                                                                          }
+                                                               },
+                                                    'module' => 'clk_source',
+                                                    'description_pdf' => undef
+                                                  }
+                               },
+                'timer0' => {
+                              'version' => 9
+                            },
+                'gui_status' => {
+                                  'status' => 'save_project',
+                                  'timeout' => 0
+                                },
+                'compile_pin_pos' => {
+                                       'bus_snoop_adr_o' => [
+                                                              7,
+                                                              0
+                                                            ],
+                                       'source_reset_in' => [
+                                                              13,
+                                                              0
+                                                            ],
+                                       'led_port_o' => [
+                                                         18,
+                                                         0
+                                                       ],
+                                       'source_clk_in' => [
+                                                            4,
+                                                            0
+                                                          ]
+                                     },
+                'instance_order' => [
+                                      'clk_source0',
+                                      'wishbone_bus0',
+                                      'gpo0',
+                                      'timer0',
+                                      'single_port_ram0',
+                                      'mor1kx0'
+                                    ],
+                'compile_pin_range_hsb' => {
+                                             'led_port_o' => '3',
+                                             'bus_snoop_adr_o' => 6
+                                           },
+                'Or12000' => {
+                               'version' => 32
+                             },
+                'compile' => {
+                               'board' => 'DE2_115',
+                               'modelsim_bin' => '/home/natan/intelFPGA_lite/19.1/modelsim_ase/bin',
+                               'compilers' => 'QuartusII,Verilator,Modelsim',
+                               'quartus_bin' => '/home/natan/intelFPGA_lite/19.1/quartus/bin',
+                               'type' => 'Modelsim'
+                             },
+                'modules' => {},
+                'soc_name' => 'tutorial5',
+                'wishbone_bus0' => {
+                                     'version' => 1
+                                   },
+                'compile_assign_type' => {
+                                           'mor1kx0_cpu_en' => 'Direct',
+                                           'source_clk_in' => 'Direct',
+                                           'mor1kx0_snoop_adr_i' => 'Direct',
+                                           'mor1kx0_snoop_en_i' => 'Direct',
+                                           'source_reset_in' => 'Direct'
+                                         },
+                'global_param' => {
+                                    'SW_LOC' => '/home/natan/Documents/Brickabode/FpgaResearch/noc-mpsoc-opencores/trunk/mpsoc_work/SOC/tutorial5/sw',
+                                    'CORE_ID' => 0
+                                  },
+                'top_ip' => bless( {
+                                     'interface' => {
+                                                      'plug:clk[0]' => {
+                                                                         'ports' => {
+                                                                                      'source_clk_in' => {
+                                                                                                           'instance_name' => 'clk_source0',
+                                                                                                           'type' => 'input',
+                                                                                                           'intfc_port' => 'clk_i',
+                                                                                                           'range' => ''
+                                                                                                         }
+                                                                                    }
+                                                                       },
+                                                      'plug:snoop[0]' => {
+                                                                           'ports' => {
+                                                                                        'mor1kx0_snoop_en_i' => {
+                                                                                                                  'instance_name' => 'mor1kx0',
+                                                                                                                  'type' => 'input',
+                                                                                                                  'intfc_port' => 'snoop_en_i',
+                                                                                                                  'range' => ''
+                                                                                                                },
+                                                                                        'mor1kx0_snoop_adr_i' => {
+                                                                                                                   'type' => 'input',
+                                                                                                                   'instance_name' => 'mor1kx0',
+                                                                                                                   'intfc_port' => 'snoop_adr_i',
+                                                                                                                   'range' => '31:0'
+                                                                                                                 }
+                                                                                      }
+                                                                         },
+                                                      'plug:enable[0]' => {
+                                                                            'ports' => {
+                                                                                         'mor1kx0_cpu_en' => {
+                                                                                                               'range' => '',
+                                                                                                               'instance_name' => 'mor1kx0',
+                                                                                                               'type' => 'input',
+                                                                                                               'intfc_port' => 'enable_i'
+                                                                                                             }
+                                                                                       }
+                                                                          },
+                                                      'socket:snoop[0]' => {
+                                                                             'ports' => {
+                                                                                          'bus_snoop_en_o' => {
+                                                                                                                'range' => '',
+                                                                                                                'intfc_port' => 'snoop_en_o',
+                                                                                                                'type' => 'output',
+                                                                                                                'instance_name' => 'wishbone_bus0'
+                                                                                                              },
+                                                                                          'bus_snoop_adr_o' => {
+                                                                                                                 'range' => 'bus_Aw-1    :   0',
+                                                                                                                 'intfc_port' => 'snoop_adr_o',
+                                                                                                                 'instance_name' => 'wishbone_bus0',
+                                                                                                                 'type' => 'output'
+                                                                                                               }
+                                                                                        }
+                                                                           },
+                                                      'plug:reset[0]' => {
+                                                                           'ports' => {
+                                                                                        'source_reset_in' => {
+                                                                                                               'instance_name' => 'clk_source0',
+                                                                                                               'type' => 'input',
+                                                                                                               'intfc_port' => 'reset_i',
+                                                                                                               'range' => ''
+                                                                                                             }
+                                                                                      }
+                                                                         },
+                                                      'IO' => {
+                                                                'ports' => {
+                                                                             'led_port_o' => {
+                                                                                               'range' => 'led_PORT_WIDTH-1     :   0',
+                                                                                               'intfc_port' => 'IO',
+                                                                                               'type' => 'output',
+                                                                                               'instance_name' => 'gpo0'
+                                                                                             }
+                                                                           }
+                                                              }
+                                                    },
+                                     'ports' => {
+                                                  'source_reset_in' => {
+                                                                         'range' => '',
+                                                                         'intfc_name' => 'plug:reset[0]',
+                                                                         'instance_name' => 'clk_source0',
+                                                                         'type' => 'input',
+                                                                         'intfc_port' => 'reset_i'
+                                                                       },
+                                                  'mor1kx0_snoop_adr_i' => {
+                                                                             'type' => 'input',
+                                                                             'instance_name' => 'mor1kx0',
+                                                                             'intfc_port' => 'snoop_adr_i',
+                                                                             'intfc_name' => 'plug:snoop[0]',
+                                                                             'range' => '31:0'
+                                                                           },
+                                                  'source_clk_in' => {
+                                                                       'intfc_port' => 'clk_i',
+                                                                       'type' => 'input',
+                                                                       'instance_name' => 'clk_source0',
+                                                                       'range' => '',
+                                                                       'intfc_name' => 'plug:clk[0]'
+                                                                     },
+                                                  'mor1kx0_snoop_en_i' => {
+                                                                            'intfc_name' => 'plug:snoop[0]',
+                                                                            'range' => '',
+                                                                            'type' => 'input',
+                                                                            'instance_name' => 'mor1kx0',
+                                                                            'intfc_port' => 'snoop_en_i'
+                                                                          },
+                                                  'bus_snoop_adr_o' => {
+                                                                         'type' => 'output',
+                                                                         'instance_name' => 'wishbone_bus0',
+                                                                         'intfc_port' => 'snoop_adr_o',
+                                                                         'intfc_name' => 'socket:snoop[0]',
+                                                                         'range' => 'bus_Aw-1    :   0'
+                                                                       },
+                                                  'led_port_o' => {
+                                                                    'intfc_port' => 'IO',
+                                                                    'type' => 'output',
+                                                                    'instance_name' => 'gpo0',
+                                                                    'range' => 'led_PORT_WIDTH-1     :   0',
+                                                                    'intfc_name' => 'IO'
+                                                                  },
+                                                  'mor1kx0_cpu_en' => {
+                                                                        'range' => '',
+                                                                        'intfc_name' => 'plug:enable[0]',
+                                                                        'type' => 'input',
+                                                                        'instance_name' => 'mor1kx0',
+                                                                        'intfc_port' => 'enable_i'
+                                                                      },
+                                                  'bus_snoop_en_o' => {
+                                                                        'intfc_port' => 'snoop_en_o',
+                                                                        'instance_name' => 'wishbone_bus0',
+                                                                        'type' => 'output',
+                                                                        'range' => '',
+                                                                        'intfc_name' => 'socket:snoop[0]'
+                                                                      }
+                                                },
+                                     'instance_ids' => {
+                                                         'single_port_ram0' => {
+                                                                                 'localparam' => {
+                                                                                                   'ram_INITIAL_EN' => {
+                                                                                                                         'default' => '"YES"',
+                                                                                                                         'type' => 'Combo-box',
+                                                                                                                         'global_param' => 'Localparam',
+                                                                                                                         'content' => '"YES","NO"',
+                                                                                                                         'info' => 'If selected as "ENABLED", the memory content will be initialized at compilation time using MEM_CONTENT_FILE_NAME.',
+                                                                                                                         'redefine_param' => 1
+                                                                                                                       },
+                                                                                                   'ram_JTAG_CONNECT' => {
+                                                                                                                           'redefine_param' => 1,
+                                                                                                                           'info' => 'JTAG_CONNECT:
+if it is not disabled then the actual memory is implemented as a dual port RAM with the second port is connected either to In-System Memory Content Editor or Jtag_to_wb. This allows that the memory content can be read/written using JTAG.   ',
+                                                                                                                           'global_param' => 'Localparam',
+                                                                                                                           'content' => '"DISABLED", "JTAG_WB" , "ALTERA_IMCE"',
+                                                                                                                           'default' => ' "JTAG_WB" ',
+                                                                                                                           'type' => 'Combo-box'
+                                                                                                                         },
+                                                                                                   'ram_FPGA_VENDOR' => {
+                                                                                                                          'info' => '',
+                                                                                                                          'redefine_param' => 1,
+                                                                                                                          'content' => '"ALTERA","GENERIC"',
+                                                                                                                          'global_param' => 'Localparam',
+                                                                                                                          'default' => '"ALTERA"',
+                                                                                                                          'type' => 'Combo-box'
+                                                                                                                        },
+                                                                                                   'ram_BTEw' => {
+                                                                                                                   'default' => '2',
+                                                                                                                   'type' => 'Fixed',
+                                                                                                                   'content' => '',
+                                                                                                                   'global_param' => 'Localparam',
+                                                                                                                   'redefine_param' => 1,
+                                                                                                                   'info' => 'Parameter'
+                                                                                                                 },
+                                                                                                   'ram_JTAG_INDEX' => {
+                                                                                                                         'type' => 'Entry',
+                                                                                                                         'default' => 'CORE_ID',
+                                                                                                                         'global_param' => 'Localparam',
+                                                                                                                         'content' => '',
+                                                                                                                         'redefine_param' => 1,
+                                                                                                                         'info' => '   A unique index number which will be used for accessing to the memory content using JTAG cable.The default value is the processing tile id (CORE_ID) . You can also inter a unique number for each individula memory.
+
+   In case you have \'n\' memory in each processing core you can define their index as "n*CORE_ID+1 , n*CORE_ID+2 ...n*CORE_ID+n-1). 
+
+   You also can disabled JTAG access here and connect one jtag to wb interface (jtag_wb) to the wishbone bus. Using single jtag index number, a jtag_wb module can read/wr any IP that is connected to wishbone bus slave port (including all memory units).
+
+'
+                                                                                                                       },
+                                                                                                   'ram_CTIw' => {
+                                                                                                                   'default' => '3',
+                                                                                                                   'type' => 'Fixed',
+                                                                                                                   'redefine_param' => 1,
+                                                                                                                   'info' => 'Parameter',
+                                                                                                                   'content' => '',
+                                                                                                                   'global_param' => 'Localparam'
+                                                                                                                 },
+                                                                                                   'ram_BYTE_WR_EN' => {
+                                                                                                                         'global_param' => 'Localparam',
+                                                                                                                         'content' => '"YES","NO"',
+                                                                                                                         'info' => 'Byte enable',
+                                                                                                                         'redefine_param' => 1,
+                                                                                                                         'default' => '"YES"',
+                                                                                                                         'type' => 'Combo-box'
+                                                                                                                       },
+                                                                                                   'ram_SELw' => {
+                                                                                                                   'content' => '',
+                                                                                                                   'global_param' => 'Localparam',
+                                                                                                                   'info' => 'Parameter',
+                                                                                                                   'redefine_param' => 1,
+                                                                                                                   'type' => 'Fixed',
+                                                                                                                   'default' => 'ram_Dw/8'
+                                                                                                                 },
+                                                                                                   'ram_TAGw' => {
+                                                                                                                   'redefine_param' => 1,
+                                                                                                                   'info' => 'Parameter',
+                                                                                                                   'content' => '',
+                                                                                                                   'global_param' => 'Localparam',
+                                                                                                                   'default' => '3',
+                                                                                                                   'type' => 'Fixed'
+                                                                                                                 },
+                                                                                                   'ram_INIT_FILE_PATH' => {
+                                                                                                                             'default' => 'SW_LOC',
+                                                                                                                             'type' => 'Fixed',
+                                                                                                                             'content' => '',
+                                                                                                                             'global_param' => 'Localparam',
+                                                                                                                             'redefine_param' => 1,
+                                                                                                                             'info' => undef
+                                                                                                                           },
+                                                                                                   'ram_BURST_MODE' => {
+                                                                                                                         'redefine_param' => 1,
+                                                                                                                         'info' => 'Enable the Wishbone bus Incrementing burst mode data transfer. Support Linear burst and 4,8,16-beat wrap burst types. ',
+                                                                                                                         'content' => '"DISABLED","ENABLED"',
+                                                                                                                         'global_param' => 'Localparam',
+                                                                                                                         'default' => '"ENABLED"',
+                                                                                                                         'type' => 'Combo-box'
+                                                                                                                       },
+                                                                                                   'ram_MEM_CONTENT_FILE_NAME' => {
+                                                                                                                                    'type' => 'Entry',
+                                                                                                                                    'default' => '"ram0"',
+                                                                                                                                    'content' => '',
+                                                                                                                                    'global_param' => 'Localparam',
+                                                                                                                                    'redefine_param' => 1,
+                                                                                                                                    'info' => 'MEM_FILE_NAME:
+The memory file name (without file type extension ) that is used for writting the memory content either at run time or at initialization time. 
+
+File Path: 
+For bus-based SoC the file path is {ProNoC_work}/SOC/{soc_name}/sw/RAM/{file_type}/{MEM_FILE_NAME}.
+For NoC-based MPSoC the file path is {ProNoC_work}/MPSOC/{mpsoc_name}/sw/tile{tile_num}/RAM/{file_type}/{MEM_FILE_NAME} 
+
+file_type: 
+bin: raw binary format . It will be used by JTAG_WB to change the memory content at runtime.
+memh: hexadecimal-string format . It will be used for initialing the Generic RAM using $readmemh command.
+mif: memory initialization file format. This file can be used to initialize Altera FPGA memory. Also if the JTAG_CONECT is selected as ALTERA_IEMC it can be used for changing memory content at run time . '
+                                                                                                                                  }
+                                                                                                 },
+                                                                                 'module' => 'single_port_ram',
+                                                                                 'module_name' => 'wb_single_port_ram',
+                                                                                 'instance' => 'ram',
+                                                                                 'parameters' => {
+                                                                                                   'ram_Aw' => {
+                                                                                                                 'default' => 14,
+                                                                                                                 'type' => 'Spin-button',
+                                                                                                                 'content' => '4,31,1',
+                                                                                                                 'global_param' => 'Parameter',
+                                                                                                                 'redefine_param' => 1,
+                                                                                                                 'info' => 'Memory address width'
+                                                                                                               },
+                                                                                                   'ram_Dw' => {
+                                                                                                                 'default' => '32',
+                                                                                                                 'type' => 'Spin-button',
+                                                                                                                 'info' => 'Memory data width in Bits.',
+                                                                                                                 'redefine_param' => 1,
+                                                                                                                 'content' => '8,1024,1',
+                                                                                                                 'global_param' => 'Parameter'
+                                                                                                               }
+                                                                                                 },
+                                                                                 'category' => 'RAM'
+                                                                               },
+                                                         'clk_source0' => {
+                                                                            'category' => 'Source',
+                                                                            'instance' => 'source',
+                                                                            'module' => 'clk_source',
+                                                                            'module_name' => 'clk_source',
+                                                                            'ports' => {
+                                                                                         'source_clk_in' => {
+                                                                                                              'range' => '',
+                                                                                                              'intfc_name' => 'plug:clk[0]',
+                                                                                                              'type' => 'input',
+                                                                                                              'intfc_port' => 'clk_i'
+                                                                                                            },
+                                                                                         'source_reset_in' => {
+                                                                                                                'range' => '',
+                                                                                                                'intfc_name' => 'plug:reset[0]',
+                                                                                                                'intfc_port' => 'reset_i',
+                                                                                                                'type' => 'input'
+                                                                                                              }
+                                                                                       }
+                                                                          },
+                                                         'timer0' => {
+                                                                       'category' => 'Timer',
+                                                                       'parameters' => {
+                                                                                         'timer_PRESCALER_WIDTH' => {
+                                                                                                                      'default' => '8',
+                                                                                                                      'type' => 'Spin-button',
+                                                                                                                      'info' => ' The prescaler  timer width. The prescaler takes the basic timer clock frequency and divides it by some value before feeding it to the timer, according to how the prescaler register(s) are configured. 
+
+
+',
+                                                                                                                      'redefine_param' => 1,
+                                                                                                                      'global_param' => 'Parameter',
+                                                                                                                      'content' => '1,32,1'
+                                                                                                                    }
+                                                                                       },
+                                                                       'instance' => 'timer',
+                                                                       'module' => 'timer',
+                                                                       'module_name' => 'timer',
+                                                                       'localparam' => {
+                                                                                         'timer_SELw' => {
+                                                                                                           'content' => '',
+                                                                                                           'global_param' => 'Localparam',
+                                                                                                           'redefine_param' => 1,
+                                                                                                           'info' => undef,
+                                                                                                           'default' => '4',
+                                                                                                           'type' => 'Fixed'
+                                                                                                         },
+                                                                                         'timer_CNTw' => {
+                                                                                                           'default' => '32     ',
+                                                                                                           'type' => 'Fixed',
+                                                                                                           'info' => undef,
+                                                                                                           'redefine_param' => 1,
+                                                                                                           'global_param' => 'Localparam',
+                                                                                                           'content' => ''
+                                                                                                         },
+                                                                                         'timer_Dw' => {
+                                                                                                         'default' => '32',
+                                                                                                         'type' => 'Fixed',
+                                                                                                         'content' => '',
+                                                                                                         'global_param' => 'Localparam',
+                                                                                                         'redefine_param' => 1,
+                                                                                                         'info' => undef
+                                                                                                       },
+                                                                                         'timer_TAGw' => {
+                                                                                                           'info' => undef,
+                                                                                                           'redefine_param' => 1,
+                                                                                                           'global_param' => 'Localparam',
+                                                                                                           'content' => '',
+                                                                                                           'default' => '3',
+                                                                                                           'type' => 'Fixed'
+                                                                                                         },
+                                                                                         'timer_Aw' => {
+                                                                                                         'default' => '3',
+                                                                                                         'type' => 'Fixed',
+                                                                                                         'content' => '',
+                                                                                                         'global_param' => 'Localparam',
+                                                                                                         'info' => undef,
+                                                                                                         'redefine_param' => 1
+                                                                                                       }
+                                                                                       }
+                                                                     },
+                                                         'mor1kx0' => {
+                                                                        'module' => 'mor1kx',
+                                                                        'module_name' => 'mor1k',
+                                                                        'ports' => {
+                                                                                     'mor1kx0_cpu_en' => {
+                                                                                                           'range' => '',
+                                                                                                           'intfc_name' => 'plug:enable[0]',
+                                                                                                           'type' => 'input',
+                                                                                                           'intfc_port' => 'enable_i'
+                                                                                                         },
+                                                                                     'mor1kx0_snoop_en_i' => {
+                                                                                                               'range' => '',
+                                                                                                               'intfc_name' => 'plug:snoop[0]',
+                                                                                                               'type' => 'input',
+                                                                                                               'intfc_port' => 'snoop_en_i'
+                                                                                                             },
+                                                                                     'mor1kx0_snoop_adr_i' => {
+                                                                                                                'intfc_name' => 'plug:snoop[0]',
+                                                                                                                'range' => '31:0',
+                                                                                                                'intfc_port' => 'snoop_adr_i',
+                                                                                                                'type' => 'input'
+                                                                                                              }
+                                                                                   },
+                                                                        'category' => 'Processor',
+                                                                        'instance' => 'mor1kx0',
+                                                                        'parameters' => {
+                                                                                          'mor1kx0_FEATURE_INSTRUCTIONCACHE' => {
+                                                                                                                                  'content' => '"NONE","ENABLED"',
+                                                                                                                                  'global_param' => 'Parameter',
+                                                                                                                                  'info' => '',
+                                                                                                                                  'redefine_param' => 1,
+                                                                                                                                  'default' => '"ENABLED"',
+                                                                                                                                  'type' => 'Combo-box'
+                                                                                                                                },
+                                                                                          'mor1kx0_FEATURE_IMMU' => {
+                                                                                                                      'type' => 'Combo-box',
+                                                                                                                      'default' => '"ENABLED"',
+                                                                                                                      'redefine_param' => 1,
+                                                                                                                      'info' => '',
+                                                                                                                      'content' => '"NONE","ENABLED"',
+                                                                                                                      'global_param' => 'Parameter'
+                                                                                                                    },
+                                                                                          'mor1kx0_FEATURE_DMMU' => {
+                                                                                                                      'type' => 'Combo-box',
+                                                                                                                      'default' => '"ENABLED"',
+                                                                                                                      'global_param' => 'Parameter',
+                                                                                                                      'content' => '"NONE","ENABLED"',
+                                                                                                                      'info' => '',
+                                                                                                                      'redefine_param' => 1
+                                                                                                                    },
+                                                                                          'mor1kx0_OPTION_OPERAND_WIDTH' => {
+                                                                                                                              'type' => 'Fixed',
+                                                                                                                              'default' => '32',
+                                                                                                                              'info' => 'Parameter',
+                                                                                                                              'redefine_param' => 1,
+                                                                                                                              'content' => '',
+                                                                                                                              'global_param' => 'Parameter'
+                                                                                                                            },
+                                                                                          'mor1kx0_FEATURE_DATACACHE' => {
+                                                                                                                           'default' => '"ENABLED"',
+                                                                                                                           'type' => 'Combo-box',
+                                                                                                                           'content' => '"NONE","ENABLED"',
+                                                                                                                           'global_param' => 'Parameter',
+                                                                                                                           'redefine_param' => 1,
+                                                                                                                           'info' => ''
+                                                                                                                         },
+                                                                                          'mor1kx0_IRQ_NUM' => {
+                                                                                                                 'content' => '',
+                                                                                                                 'global_param' => 'Parameter',
+                                                                                                                 'redefine_param' => 1,
+                                                                                                                 'info' => undef,
+                                                                                                                 'type' => 'Fixed',
+                                                                                                                 'default' => '32'
+                                                                                                               },
+                                                                                          'mor1kx0_OPTION_DCACHE_SNOOP' => {
+                                                                                                                             'default' => '"NONE"',
+                                                                                                                             'type' => 'Combo-box',
+                                                                                                                             'info' => '',
+                                                                                                                             'redefine_param' => 1,
+                                                                                                                             'content' => '"NONE","ENABLED"',
+                                                                                                                             'global_param' => 'Parameter'
+                                                                                                                           }
+                                                                                        }
+                                                                      },
+                                                         'wishbone_bus0' => {
+                                                                              'category' => 'Bus',
+                                                                              'instance' => 'bus',
+                                                                              'module_name' => 'wishbone_bus',
+                                                                              'module' => 'wishbone_bus',
+                                                                              'localparam' => {
+                                                                                                'bus_TAGw' => {
+                                                                                                                'content' => '',
+                                                                                                                'global_param' => 'Localparam',
+                                                                                                                'info' => undef,
+                                                                                                                'redefine_param' => 1,
+                                                                                                                'type' => 'Fixed',
+                                                                                                                'default' => '3'
+                                                                                                              },
+                                                                                                'bus_BTEw' => {
+                                                                                                                'type' => 'Fixed',
+                                                                                                                'default' => '2 ',
+                                                                                                                'global_param' => 'Localparam',
+                                                                                                                'content' => '',
+                                                                                                                'redefine_param' => 1,
+                                                                                                                'info' => undef
+                                                                                                              },
+                                                                                                'bus_M' => {
+                                                                                                             'type' => 'Spin-button',
+                                                                                                             'default' => 2,
+                                                                                                             'info' => 'Number of wishbone master interface',
+                                                                                                             'redefine_param' => 1,
+                                                                                                             'content' => '1,256,1',
+                                                                                                             'global_param' => 'Localparam'
+                                                                                                           },
+                                                                                                'bus_CTIw' => {
+                                                                                                                'redefine_param' => 1,
+                                                                                                                'info' => undef,
+                                                                                                                'global_param' => 'Localparam',
+                                                                                                                'content' => '',
+                                                                                                                'default' => '3',
+                                                                                                                'type' => 'Fixed'
+                                                                                                              },
+                                                                                                'bus_Aw' => {
+                                                                                                              'type' => 'Spin-button',
+                                                                                                              'default' => '32',
+                                                                                                              'content' => '4,128,1',
+                                                                                                              'global_param' => 'Localparam',
+                                                                                                              'info' => 'The wishbone Bus address width',
+                                                                                                              'redefine_param' => 1
+                                                                                                            },
+                                                                                                'bus_SELw' => {
+                                                                                                                'default' => 'bus_Dw/8',
+                                                                                                                'type' => 'Fixed',
+                                                                                                                'info' => undef,
+                                                                                                                'redefine_param' => 1,
+                                                                                                                'content' => '',
+                                                                                                                'global_param' => 'Localparam'
+                                                                                                              },
+                                                                                                'bus_Dw' => {
+                                                                                                              'default' => '32',
+                                                                                                              'type' => 'Spin-button',
+                                                                                                              'info' => 'The wishbone Bus data width in bits.',
+                                                                                                              'redefine_param' => 1,
+                                                                                                              'global_param' => 'Localparam',
+                                                                                                              'content' => '8,512,8'
+                                                                                                            },
+                                                                                                'bus_S' => {
+                                                                                                             'default' => '4',
+                                                                                                             'type' => 'Spin-button',
+                                                                                                             'content' => '1,256,1',
+                                                                                                             'global_param' => 'Localparam',
+                                                                                                             'info' => 'Number of wishbone slave interface',
+                                                                                                             'redefine_param' => 1
+                                                                                                           }
+                                                                                              },
+                                                                              'ports' => {
+                                                                                           'bus_snoop_adr_o' => {
+                                                                                                                  'intfc_name' => 'socket:snoop[0]',
+                                                                                                                  'range' => 'bus_Aw-1    :   0',
+                                                                                                                  'type' => 'output',
+                                                                                                                  'intfc_port' => 'snoop_adr_o'
+                                                                                                                },
+                                                                                           'bus_snoop_en_o' => {
+                                                                                                                 'type' => 'output',
+                                                                                                                 'intfc_port' => 'snoop_en_o',
+                                                                                                                 'intfc_name' => 'socket:snoop[0]',
+                                                                                                                 'range' => ''
+                                                                                                               }
+                                                                                         }
+                                                                            },
+                                                         'gpo0' => {
+                                                                     'ports' => {
+                                                                                  'led_port_o' => {
+                                                                                                    'intfc_port' => 'IO',
+                                                                                                    'type' => 'output',
+                                                                                                    'intfc_name' => 'IO',
+                                                                                                    'range' => 'led_PORT_WIDTH-1     :   0'
+                                                                                                  }
+                                                                                },
+                                                                     'localparam' => {
+                                                                                       'led_Dw' => {
+                                                                                                     'default' => 'led_PORT_WIDTH',
+                                                                                                     'type' => 'Fixed',
+                                                                                                     'redefine_param' => 1,
+                                                                                                     'info' => undef,
+                                                                                                     'global_param' => 'Localparam',
+                                                                                                     'content' => ''
+                                                                                                   },
+                                                                                       'led_TAGw' => {
+                                                                                                       'default' => '    3',
+                                                                                                       'type' => 'Fixed',
+                                                                                                       'content' => '',
+                                                                                                       'global_param' => 'Localparam',
+                                                                                                       'info' => undef,
+                                                                                                       'redefine_param' => 1
+                                                                                                     },
+                                                                                       'led_SELw' => {
+                                                                                                       'type' => 'Fixed',
+                                                                                                       'default' => '    4',
+                                                                                                       'global_param' => 'Localparam',
+                                                                                                       'content' => '',
+                                                                                                       'info' => undef,
+                                                                                                       'redefine_param' => 1
+                                                                                                     },
+                                                                                       'led_Aw' => {
+                                                                                                     'default' => '    2',
+                                                                                                     'type' => 'Fixed',
+                                                                                                     'info' => undef,
+                                                                                                     'redefine_param' => 1,
+                                                                                                     'global_param' => 'Localparam',
+                                                                                                     'content' => ''
+                                                                                                   }
+                                                                                     },
+                                                                     'module' => 'gpo',
+                                                                     'module_name' => 'gpo',
+                                                                     'parameters' => {
+                                                                                       'led_PORT_WIDTH' => {
+                                                                                                             'content' => '1,32,1',
+                                                                                                             'global_param' => 'Parameter',
+                                                                                                             'redefine_param' => 1,
+                                                                                                             'info' => 'output port width',
+                                                                                                             'default' => 4,
+                                                                                                             'type' => 'Spin-button'
+                                                                                                           }
+                                                                                     },
+                                                                     'instance' => 'led',
+                                                                     'category' => 'GPIO'
+                                                                   }
+                                                       }
+                                   }, 'ip_gen' ),
+                'clk_source0' => {
+                                   'version' => 0
+                                 },
+                'tile_diagram' => {
+                                    'show_clk' => 1,
+                                    'show_reset' => 1,
+                                    'scale' => '0.531441',
+                                    'show_unused' => 1
+                                  },
+                'verilator' => {
+                                 'libs' => {
+                                             'Vtop' => 'tutorial4.v'
+                                           }
+                               },
+                'gpo0' => {
+                            'version' => 2
+                          },
+                'mor1kx0' => {
+                               'version' => 17
+                             },
+                'jtag_uart0' => {
+                                  'version' => 14
+                                },
+                'compile_pin' => {
+                                   'source_reset_in' => 'KEY',
+                                   'bus_snoop_adr_o' => 'HEX0',
+                                   'led_port_o' => 'LEDG',
+                                   'source_clk_in' => 'CLOCK_50'
+                                 }
+              }, 'soc' );
